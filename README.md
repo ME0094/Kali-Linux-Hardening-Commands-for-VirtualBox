@@ -59,7 +59,7 @@ Before you begin, ensure you have:
 To quickly harden your Kali Linux system, you can use our automated script:
 
 ```bash
-wget https://github.com/ME0094/Kali-Linux-Hardening-Commands-for-VirtualBox/blob/main/harden_kali.sh
+wget https://github.com/ME0094/Kali-Linux-Hardening-Commands-for-VirtualBox/blob/bed6d7c2e1dc6f4ba1c8269c24c5ed3536860577/harden_kali.sh
 chmod +x harden_kali.sh
 sudo ./harden_kali.sh
 ```
