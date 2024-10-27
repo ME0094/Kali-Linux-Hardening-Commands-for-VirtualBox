@@ -6,8 +6,7 @@
 
 <p align="center">
  <a href="https://www.kali.org/"><img src="https://img.shields.io/badge/Platform-Kali%20Linux-557C94.svg"/></a>
- <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/github/license/ME0094/Kali-Linux-Hardening-Commands-for-VirtualBox
-"/></a>
+ <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/github/license/ME0094/Kali-Linux-Hardening-Commands-for-VirtualBox"/></a>
  <a href="#"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"/></a>
 </p>
 
