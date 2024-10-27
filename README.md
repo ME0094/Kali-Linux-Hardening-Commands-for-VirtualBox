@@ -25,7 +25,7 @@ This guide provides a comprehensive set of best practices and commands for harde
 To quickly harden your Kali Linux system, you can use our automated script:
 
 ```bash
-wget https://raw.githubusercontent.com/yourusername/kali-hardening/main/harden_kali.sh
+wget https://github.com/ME0094/Kali-Linux-Hardening-Commands-for-VirtualBox-Environment/blob/main/harden_kali.sh
 chmod +x harden_kali.sh
 sudo ./harden_kali.sh
 ```
