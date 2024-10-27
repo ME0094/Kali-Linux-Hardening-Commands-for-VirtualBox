@@ -73,7 +73,93 @@ sudo sed -i 's/X11Forwarding yes/X11Forwarding no/' /etc/ssh/sshd_config
 sudo systemctl restart ssh
 ```
 
-... [Content for sections 5-17 remains the same]
+# 5. Disable Unnecessary Services
+```
+sudo systemctl disable bluetooth.service
+sudo systemctl disable cups.service
+sudo systemctl disable avahi-daemon.service
+```
+
+# 6. File System Security
+# Set proper permissions for important directories
+```
+sudo chmod 700 /root
+sudo chmod 700 /home/*
+sudo chmod 700 /etc/ssh
+```
+
+# 7. Network Security
+# Disable IPv6 if not needed
+```
+echo "net.ipv6.conf.all.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+```
+
+# 8. VirtualBox-specific Settings
+# Disable Shared Folders if not needed
+```
+VBoxManage setextradata "Kali Linux" VBoxInternal2/SharedFoldersEnableSymlinksCreate/sharename 0
+```
+
+# Disable Clipboard Sharing
+```
+VBoxManage modifyvm "Kali Linux" --clipboard-mode disabled
+```
+
+# Disable Drag and Drop
+```
+VBoxManage modifyvm "Kali Linux" --draganddrop disabled
+```
+
+
+# 9. Install and Configure fail2ban
+```
+sudo apt install fail2ban -y
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+```
+
+# 10. Enable and Configure AppArmor
+```
+sudo apt install apparmor apparmor-utils -y
+sudo aa-enforce /etc/apparmor.d/*
+```
+
+# 11. Secure Shared Memory
+```
+echo "tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0" | sudo tee -a /etc/fstab
+```
+
+# 12. Disable Core Dumps
+```
+echo "* hard core 0" | sudo tee -a /etc/security/limits.conf
+echo "fs.suid_dumpable = 0" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+```
+
+# 13. Secure GRUB Bootloader
+```
+sudo update-grub
+sudo grub-mkpasswd-pbkdf2
+# Follow the prompts to create a password hash, then add it to /etc/grub.d/40_custom:
+# set superusers="admin"
+# password_pbkdf2 admin <generated-password-hash>
+sudo update-grub
+```
+
+# 14. Enable Process Accounting
+```
+sudo apt install acct -y
+sudo touch /var/log/wtmp
+```
+
+# 15. Install and Configure Audit Daemon
+```
+sudo apt install auditd -y
+sudo systemctl enable auditd
+sudo systemctl start auditd
+```
 
 ## 📚 Additional Resources
 - [Official Kali Linux Documentation](https://www.kali.org/docs/)
