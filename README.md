@@ -39,7 +39,9 @@
 
 ## 🔒 Introduction
 
-Welcome to the Kali Linux Hardening Guide for VirtualBox! This comprehensive guide provides a set of best practices and commands to enhance the security of your Kali Linux system running in VirtualBox. By following these steps, you can significantly improve your system's resilience against potential vulnerabilities and attacks, making it a more secure environment for penetration testing and security auditing.
+Welcome to the Kali Linux Hardening Guide for VirtualBox!
+
+This comprehensive guide provides a set of best practices and commands to enhance the security of your Kali Linux system running in VirtualBox. By following these steps, you can significantly improve your system's resilience against potential vulnerabilities and attacks, making it a more secure environment for penetration testing and security auditing.
 
 Whether you're a cybersecurity professional, ethical hacker, or enthusiast, this guide will help you create a more robust Kali Linux setup, tailored specifically for use within VirtualBox.
 
